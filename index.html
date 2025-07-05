@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Salão Completo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: sans-serif; margin: 0; background: #fff0f5; color: #333; }
+    header { background: #e91e63; padding: 20px; text-align: center; color: white; }
+    nav { background: #f8bbd0; text-align: center; padding: 10px 0; }
+    nav a { margin: 0 15px; text-decoration: none; color: #880e4f; font-weight: bold; }
+    section { display: none; padding: 30px 20px; max-width: 1000px; margin: auto; }
+    section.active { display: block; animation: fadeIn 0.5s ease-in-out; }
+    h2 { color: #e91e63; text-align: center; margin-bottom: 20px; }
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
+    .gallery img { width: 100%; border-radius: 10px; height: 150px; object-fit: cover; }
+    @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Salão Beleza Suprema</h1>
+</header>
+
+<nav>
+  <a href="#" class="tab" data-tab="unhas">Unhas</a>
+  <a href="#" class="tab" data-tab="cabelos">Cabelos</a>
+  <a href="#" class="tab" data-tab="depilacao">Depilação</a>
+  <a href="#" class="tab" data-tab="sobrancelhas">Sobrancelhas</a>
+</nav>
+
+<section id="unhas" class="active">
+  <h2>Unhas</h2>
+  <div class="gallery">
+    <img src="https://images.pexels.com/photos/3997386/pexels-photo-3997386.jpeg">
+    <img src="https://images.pexels.com/photos/3997389/pexels-photo-3997389.jpeg">
+    <img src="https://images.pexels.com/photos/12151231/pexels-photo-12151231.jpeg">
+    <img src="https://images.pexels.com/photos/5238015/pexels-photo-5238015.jpeg">
+  </div>
+</section>
+
+<section id="cabelos">
+  <h2>Cabelos</h2>
+  <div class="gallery">
+    <img src="https://images.pexels.com/photos/3993457/pexels-photo-3993457.jpeg">
+    <img src="https://images.pexels.com/photos/935975/pexels-photo-935975.jpeg">
+    <img src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg">
+    <img src="https://images.pexels.com/photos/3776611/pexels-photo-3776611.jpeg">
+  </div>
+</section>
+
+<section id="depilacao">
+  <h2>Depilação</h2>
+  <div class="gallery">
+    <img src="https://images.pexels.com/photos/4099440/pexels-photo-4099440.jpeg">
+    <img src="https://images.pexels.com/photos/7659873/pexels-photo-7659873.jpeg">
+    <img src="https://images.pexels.com/photos/6816887/pexels-photo-6816887.jpeg">
+    <img src="https://images.pexels.com/photos/6816888/pexels-photo-6816888.jpeg">
+  </div>
+</section>
+
+<section id="sobrancelhas">
+  <h2>Sobrancelhas</h2>
+  <div class="gallery">
+    <img src="https://images.pexels.com/photos/2916458/pexels-photo-2916458.jpeg">
+    <img src="https://images.pexels.com/photos/6816902/pexels-photo-6816902.jpeg">
+    <img src="https://images.pexels.com/photos/5853496/pexels-photo-5853496.jpeg">
+    <img src="https://images.pexels.com/photos/5853494/pexels-photo-5853494.jpeg">
+  </div>
+</section>
+
+<script>
+  const tabs = document.querySelectorAll(".tab");
+  const sections = document.querySelectorAll("section");
+
+  tabs.forEach(tab => {
+    tab.addEventListener("click", e => {
+      e.preventDefault();
+      const target = tab.dataset.tab;
+      sections.forEach(sec => sec.classList.remove("active"));
+      document.getElementById(target).classList.add("active");
+    });
+  });
+</script>
+
+</body>
+</html>
